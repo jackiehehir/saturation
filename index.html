@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class=touch>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=yes">
@@ -21,6 +21,8 @@
         h2 {font-size:18px;margin-bottom:8px;}
 
         .group {margin-bottom:24px;}
+        
+        .touch a::after {position: absolute;top: -14px;left: -2px;height: 48px;width: calc(100% + 4px);content: '';}
 
     </style>
     </head>
@@ -73,5 +75,12 @@
 
 
         </div>
+        
+        <script>
+           window.onmouseover = function(){
+              document.documentElement.classList.remove('touch');
+              window.onmouseover = null;
+           };
+        </script>
     </body>
 </html>
