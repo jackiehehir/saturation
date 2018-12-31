@@ -89,21 +89,17 @@
                 var g = Math.floor(Math.random()*256);
                 var b = Math.floor(Math.random()*256);
                 
-                var c = contrast([r,g,b],[255,255,255]);
-                
-                console.log(c, r,g,b);
-                
-                if ( c < 1){
+                var c = contrast([255,255,255], [r,g,b]);
+                                
+                if ( c < 1 ){
                     c = 1/c;
                 }
-                console.log(c, r,g,b);
+
                 if ( c < 4.5 ){
                     return color();
                 }
                 
-                console.log(r,g,b);
-                
-                document.body.innerHTML = '<style>a {background:rgb(' + r+','+b + ','+g+')}</style>';
+                document.body.innerHTML += '<style>a {background:rgb(' + r+','+b + ','+g+')}</style>';
                 
                 return [r,g,b];
             }
